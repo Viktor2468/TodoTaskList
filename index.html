@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Todos</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="listContainer">
+            <h2>My ToDo Lists</h2>
+          
+            <ul class="lists" data-lists>
+                <!-- <li class="listItem">YouTube</li>
+                <li class="listItem">Work</li>
+                <li class="listItem">Homework</li> -->
+            </ul>
+            <form class="listForm" data-list-form>
+                <button class="createListBtn">+</button>
+                <input type="text" class="listInput" data-list-input placeholder="enter new list">
+            </form>
+        </div>
+
+        <div class="taskContainer" data-task-display-container>
+           
+            <div class="tasks">
+                <div class="taskInfo">
+                    <h1 class="taskTitle" data-task-title></h1> 
+                    <p class="taskCount" data-task-count>3 tasks remaining</p>
+                </div>
+                <div data-task-list>
+                    
+                </div>
+                <form class="taskInputForm" data-new-task-form>
+                    <button class="createListBtn">+</button>
+                    <input type="text" class="taskInput" placeholder="new task name" data-newtask-input>
+                </form>
+            </div>
+
+            <div class="controls">
+                <button type="button" class="controlsBtn" id="clearTaskBtn">Clear completed tasks</button>
+                <button type="button" class="controlsBtn" id="deleteListBtn">Delete list</button>
+            </div>
+        </div>
+       
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --p: #271d23;
+    --s: #f7f6f4;
+    --t: #9d99a0;
+    --f: #D15760;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: var(--p);
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    min-height: 800px;
+    margin: 50px auto 0 auto;
+    position: relative;
+    display: flex;
+    gap: 5rem;
+}
+
+.listContainer {
+    color: var(--s);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+    width: 30%;
+    padding-top: 32px;
+}
+
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+}
+
+.tasks {
+    min-height: 600px;
+    background-color: #31252c;
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+              100%, 0.075),
+              /* shadow ring 👇 */
+              0 0 0 1px hsla(0, 0%, 0%, 0.05),
+              /* multiple soft shadows 👇 */
+              0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+              0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+              0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+    border-radius: 5px;
+    color: var(--s);
+    padding: 2rem;
+}
+
+.controls {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.controlsBtn {
+    font-size: 1.2rem;
+    color: var(--s);
+    font-weight: 200;
+    opacity: 80%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid var(--p);
+}
+
+.controlsBtn:hover {
+    opacity: 40%;
+    border-bottom: 1px solid;
+}
+
+.listContainer > h2 {
+    font-size: 2rem;
+}
+
+.listContainer > label {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.lists {
+    display: flex;
+    flex-direction: column;
+    list-style: circle;
+    gap: 1rem;
+    margin-left: 25px;
+}
+
+.listItem {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.listItem:hover {
+    opacity: 60%;
+}
+
+.createListBtn {
+    color: var(--s);
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.listForm {
+    display: flex;
+}
+
+.listInput {
+    font-size: 1rem;
+    margin-left: 1rem;
+    border-bottom: 2px solid var(--f);
+    padding-bottom: 5px;
+    outline: none;
+    color: var(--s);
+}
+
+.error, .error::placeholder {
+    color: red;
+    border-bottom-color: red;
+}
+
+.selectedList {
+    font-weight: bold;
+    color: var(--f);
+    list-style-type: disc;
+}
+
+.listDate {
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.taskInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.taskTitle {
+    font-size: 2rem;
+    color: var(--f);
+    font-weight: 500;
+}
+
+.taskCount {
+    font-weight: 300;
+    color: var(--s);
+}
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.task {
+    border-bottom: 1px solid var(--s);
+    padding: 0.8rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task label{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    transition: all 200ms ease-in-out;
+    flex-direction: row-reverse;
+}
+
+
+
+.customCheckbox {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 1px solid var(--s);
+    transform: scale(1);
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.task > label:hover .customCheckbox, 
+[type="checkbox"]:focus + label .customCheckbox {
+    transform: scale(1.1);
+    border-color: var(--f);
+
+}
+
+[type="checkbox"]:checked + label .customCheckbox {
+    background: var(--f);
+    border-color: var(--f);
+    box-shadow: inset 0 0 0px 3px #31252c;
+}
+
+[type="checkbox"]:checked + label {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.deleteTask {
+    color: var(--s);
+    font-size: 1rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+.deleteTask:hover {
+    color: var(--f);
+    font-weight: bold;  
+}
+
+.taskInputForm {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.taskInput {
+    border-bottom: 2px solid var(--f);
+    padding: 0.8rem 0;
+    width: 100%;
+    color: var(--s);
+    font-size: 1.3rem;
+    outline: none;
+}
+
+.taskInput::placeholder {
+    font-size: 1.3rem;
+}
+
+
+
+
